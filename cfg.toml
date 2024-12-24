@@ -1,5 +1,5 @@
 [gwrite.plotter]
-# vertical_flip = true
+invert_y = true
 
 document_start = '''
 G90     ; absolute coordinates
