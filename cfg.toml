@@ -27,7 +27,3 @@ M2        ; program end
 '''
 
 unit = "mm"
-
-# scale is (1 / (1/96 inch to mm)) -> 1px == 1mm
-scale_x = 3.779527559
-scale_y = 3.779527559
