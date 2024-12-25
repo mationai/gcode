@@ -4,18 +4,17 @@ import time
 from sys import argv, exit
 import subprocess
 
-filepath = argv[1] if len(argv) > 1 and argv[0].startswith('optimize') else argv[0]
-filename = filepath[:-4] if filepath[-4:] == '.svg' else ''
+filepathExt = argv[1] if len(argv) > 1 else ''
+filepath = filepathExt[:-4] if filepathExt[-4:] == '.svg' else ''
 
-if not filename:
+if not filepath:
     print('Usage: optimize.py <svg file> [optimized svg file]')
     exit(0)
 
-outpath = argv[2] if len(argv) > 2 and argv[0].startswith('optimize') else filename+'Opt.svg'
-
+outpath = argv[2] if len(argv) > 2 else filepath+'Opt.svg'
 args = 'linemerge linesort reloop write'.split(' ')
 
 start_time = time.time()
-subprocess.run(['vpype', 'read', filepath] + args + [outpath], check=True)
+subprocess.run(['vpype', 'read', filepathExt] + args + [outpath], check=True)
 duration = time.time() - start_time
 print(f"({duration:.2f} seconds)")

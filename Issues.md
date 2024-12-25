@@ -1,0 +1,1 @@
+- msurguy-flowlinesOpt.svg offset x at top & bottom differs if either margin is not 0, translate x is not 0, or offset_x in toml is not 0. `-o 0 0` in scaleto nor `-b` in layout did not matter.

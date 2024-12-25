@@ -5,8 +5,8 @@ import time
 from sys import argv, exit
 import subprocess
 
-filepathExt = argv[1] if len(argv) > 1 and argv[0].startswith('gencode') else argv[0]
-filepath = filepathExt[:-4] if filepathExt[-4:] == '.svg' else ''
+filepathExt = argv[1] if len(argv) > 1 else ''
+filepath = filepathExt[:-4] if filepathExt and filepathExt[-4:] == '.svg' else ''
 
 if not filepath:
     print('Usage: gencode.py <svg file> [options]  where options are')
@@ -16,7 +16,7 @@ if not filepath:
     exit(0)
 
 svgpath = filepath[:-3] if filepath[-3:] == 'Opt' else filepath
-allStrs = argv[2:] if len(argv) > 2 and argv[0].startswith('gencode') else []
+allStrs = argv[2:] if len(argv) > 2 else []
 loStr = ''
 if allStrs:
     if allStrs[0].startswith('l:'):
@@ -57,7 +57,8 @@ args = 'vpype -c cfg.toml'.split(' ')
 rargs = ['read', filepathExt]
 wargs = 'gwrite -p plotter'.split(' ')
 mar = ['-m', '0'] if '-m' not in lOptions else [] # small & swing to a corner w/o margin
-layOpts = ['layout'] + mar + lOptions
+bb = ['-b'] if '-b' not in lOptions else [] # 
+layOpts = ['layout'] + mar + bb + lOptions
 outpath = svgpath+'.gcode'
 
 start_time = time.time()

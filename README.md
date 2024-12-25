@@ -32,11 +32,13 @@ $3=7 inverts Y. $23=7 then inverts Y homing direction so that it continues to ho
 
 Do the same in `cfg.toml` (`invert_y = true`), No `vertical_flip = true`.
 
+
 ## vpype, SVG Notes
 
 Use `linesimplify` before `splitall` [issue 58](https://github.com/abey79/vpype/issues/58).
 
 Layers in SVG via `inkscape:groupmode="layer" inkscape:label="layername"` [Layer names]( https://bylr.info/articles/2023/03/17/layer-names/).
+
 
 ## vpype Notes - Old, maybe outdated
 
