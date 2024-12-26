@@ -58,7 +58,7 @@ rargs = ['read', filepathExt]
 wargs = 'gwrite -p plotter'.split(' ')
 mar = ['-m', '0'] if '-m' not in lOptions else [] # small & swing to a corner w/o margin
 bb = ['-b'] if '-b' not in lOptions else [] # 
-layOpts = ['layout'] + mar + bb + lOptions
+layOpts = ['layout'] + mar + bb + lOptions if lOptions else []
 outpath = svgpath+'.gcode'
 
 start_time = time.time()

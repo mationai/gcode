@@ -10,7 +10,7 @@ G00 Z5  ; up
 
 segment_first = '''
 G00 X{x:.2f} Y{y:.2f}
-G01 Z-1 F123; down
+G01 Z-1 F999; down
 '''
 
 segment = '''

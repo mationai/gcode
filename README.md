@@ -31,7 +31,7 @@ $23=7
 $3=7 inverts Y. $23=7 then inverts Y homing direction so that it continues to home in the correct direction.
 
 Do the same in `cfg.toml` (`invert_y = true`), No `vertical_flip = true`.
-
+Check that the output direction is correct, remove `invert_y = true` if needed.
 
 ## vpype, SVG Notes
 
