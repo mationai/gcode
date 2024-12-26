@@ -12,7 +12,7 @@ if not filepath:
     exit(0)
 
 outpath = argv[2] if len(argv) > 2 else filepath+'Opt.svg'
-args = 'linemerge linesort reloop write'.split(' ')
+args = 'linemerge linesort write'.split(' ')
 
 start_time = time.time()
 subprocess.run(['vpype', 'read', filepathExt] + args + [outpath], check=True)

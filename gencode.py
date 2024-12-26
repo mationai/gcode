@@ -21,7 +21,7 @@ loStr = ''
 if allStrs:
     if allStrs[0].startswith('l:'):
         loStr = allStrs.pop(0)
-    if len(allStrs) > 1 and allStrs[1].startswith('l:'):
+    elif len(allStrs) > 1 and allStrs[1].startswith('l:'):
         loStr = allStrs.pop(1)
 opStr = allStrs[0] if allStrs else ''
 opStrs = opStr.split(',') if opStr else []
